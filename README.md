@@ -42,9 +42,9 @@ Problem Sheets with solutions/
 
 1. **Download or clone the repository:**
    ```sh
-   git clone <repository-url>
+   git clone https://github.com/rumman999/CSE2216_DSA_lab_UIU.git
    ```
-2. **Open **`` to see the problems.
+2. **Open `sorting_problem_sheet.pdf`** to see the problems.
 3. Navigate to the respective sorting algorithm folder to find solutions.
 4. Each problem folder contains a `.cpp` file with a simple solution for beginners.
 
