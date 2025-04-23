@@ -31,34 +31,17 @@ void insertLast(int value){
     current->next = newItem;
 }
 
-void deleteValue(int value){
-
-
-    if(head ==  NULL){
-        cout << "Nothing to delete" << endl;
-        return;
-    } else if(head->data == value){
-        Node* temp = head;
-        head = head->next;
-        delete temp;
-        return;
-    }
-    
-    Node* current = head;
-
-    while(current->next != NULL && current->next->data != value){
-        current = current->next;
-    }
-
-    if(current->next == NULL){
-        cout << "Value doesn't exist" << endl;
+void merge(){
+    if(head == NULL || head->next == NULL){
         return;
     }
 
-    Node* temp = current->next;
-
-    current->next = current->next->next;
-    delete temp;
+    Node* temp1 = head;
+    Node* temp2 = head->next->next;
+    Node* current = head->next;
+    while(temp2 != NULL){
+        // incompelte; too hard TwT will do it later...
+    }
 }
 
 
@@ -82,10 +65,9 @@ int main(){
     insertLast(40);
 
     int n;
-    cout << "Enter the value that needs to be deleted: ";
+    cout << "Enter the value to search for: ";
     cin >> n;
-    deleteValue(n);
-    printAll();
+    cout << "Position: " << find(n) << endl;
 
     return 0;
 }
