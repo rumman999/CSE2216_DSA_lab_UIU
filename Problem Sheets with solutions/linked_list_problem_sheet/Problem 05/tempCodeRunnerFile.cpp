@@ -31,34 +31,40 @@ void insertLast(int value){
     current->next = newItem;
 }
 
-void insert(int n){
-    for(int i=0;i<n;i++){
-        int value;
-        cin >> value;
+int find(int value){
 
-        insertLast(value);
+
+    if(head ==  NULL){
+        return -1;
     }
-}
 
-void printAll(){
+    int pos = 1;
+    
     Node* current = head;
-
-    cout << "Linked List: ";
-    while(current != NULL){
-        cout << current->data << " -> ";
+    while(current != NULL && current->data != value){
+        pos++;
         current = current->next;
     }
-    cout << "NULL" << endl;
+
+    if(current == NULL){
+        return -1;
+    }
+
+    return pos;
 }
+
 
 int main(){
 
-    int n;
-    cout << "Enter the number of elements you want to add: ";
-    cin >> n;
+    insertLast(10);
+    insertLast(20);
+    insertLast(30);
+    insertLast(40);
 
-    insert(n);
-    printAll();
+    int n;
+    cout << "Enter the value to search for: ";
+    cin >> n;
+    cout << "Position: " << find(n) << endl;
 
     return 0;
 }

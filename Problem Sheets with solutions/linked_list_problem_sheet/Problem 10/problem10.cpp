@@ -31,38 +31,24 @@ void insertLast(int value){
     current->next = newItem;
 }
 
-void reverseLinkedList(){
-    if(head == NULL || head->next == NULL){
+void removeDuplicate(){
+    if(head == NULL){
+        cout << "The list is empty" << endl;
         return;
     }
-    else if(head->next->next == NULL){
-        Node* temp1 = head;
-        Node* temp2 = head->next;
 
-        head = temp2;
-        head->next = temp1;
-        temp1->next = NULL;
-    }
-    else{
-        
-        Node* prev = NULL;
-        Node* current = head;
-        Node* next = NULL;
+    Node* current = head;
 
-        while(current != NULL){
-            next = current->next;
-            current->next = prev;
-            prev = current;
-            current = next;
+    while(current->next != NULL){
+        if(current->data == current->next->data){
+            Node* temp = current->next;
+            current->next = current->next->next;
+            delete temp;
+        } else{
+            current = current->next;
         }
-
-        head = prev;
     }
-
-    
 }
-
-
 
 void printAll(){
     Node* current = head;
@@ -75,15 +61,16 @@ void printAll(){
     cout << "NULL" << endl;
 }
 
+
 int main(){
 
+    insertLast(10);
     insertLast(10);
     insertLast(20);
     insertLast(30);
     insertLast(40);
 
-
-    reverseLinkedList();
+    removeDuplicate();
     printAll();
 
     return 0;

@@ -12,6 +12,8 @@ struct Node{
 };
 
 Node* head = NULL;
+Node* headA = NULL;
+Node* headB = NULL;
 
 
 
@@ -31,23 +33,48 @@ void insertLast(int value){
     current->next = newItem;
 }
 
-void merge(){
-    if(head == NULL || head->next == NULL){
+
+void sortedMergedList(Node* list1, Node* list2){
+    if(list1 == NULL || list2 == NULL){
+        cout << "List(s) is/are empty" << endl;
         return;
     }
 
-    Node* temp1 = head;
-    Node* temp2 = head->next->next;
-    Node* current = head->next;
-    while(temp2 != NULL){
-        // incompelte; too hard TwT will do it later...
+    Node* a = list1;
+    Node* b = list2;
+
+    if(a->data<b->data){
+        head = list1;
+        a = a->next;
+    } else{
+        head = list2;
+        b = b->next;
     }
+
+    
+    Node* current = head;
+
+    while(a !=NULL && b != NULL){
+ 
+        if(a->data<b->data){
+            current->next = a;
+            a = a->next;
+            current = current-> next;
+        } else{
+            current->next = b;
+            b = b->next;
+            current = current-> next;
+        }
+    }
+
+    if(a != NULL) current->next = a;
+    else if(b != NULL) current->next = b;
+
+
 }
 
-
-
-void printAll(){
-    Node* current = head;
+void printAll(Node* start){
+    Node* current = start;
 
     cout << "Linked List: ";
     while(current != NULL){
@@ -57,17 +84,29 @@ void printAll(){
     cout << "NULL" << endl;
 }
 
+
 int main(){
 
-    insertLast(10);
-    insertLast(20);
-    insertLast(30);
-    insertLast(40);
+    Node* firstA = new Node(10);
+    Node* secondA = new Node(30);
+    Node* thirdA = new Node(50);
 
-    int n;
-    cout << "Enter the value to search for: ";
-    cin >> n;
-    cout << "Position: " << find(n) << endl;
+    firstA->next = secondA;
+    secondA->next = thirdA;
+
+    headA = firstA;
+
+    Node* firstB = new Node(20);
+    Node* secondB = new Node(40);
+    Node* thirdB = new Node(60);
+
+    firstB->next = secondB;
+    secondB->next = thirdB;
+
+    headB = firstB;
+
+    sortedMergedList(headA,headB);
+    printAll(head);
 
     return 0;
 }

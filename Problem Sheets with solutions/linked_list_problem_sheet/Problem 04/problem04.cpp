@@ -68,7 +68,7 @@ void printAll(){
 
     cout << "Linked List: ";
     while(current != NULL){
-        cout << current->data << " —> ";
+        cout << current->data << " -> ";
         current = current->next;
     }
     cout << "NULL" << endl;
