@@ -1,0 +1,27 @@
+# Ignore compiled files
+*.exe
+*.out
+*.o
+*.obj
+
+# Ignore macOS metadata
+.DS_Store
+
+# Ignore log/temp/backup files
+*.log
+*.tmp
+*~
+
+# Ignore all dotfiles/folders
+.*
+
+# Keep important ones
+!.gitignore
+!.gitattributes
+
+# Explicitly ignore IDE settings
+.vscode/
+.idea/
+
+# Optional build folder
+build/
