@@ -1,70 +1,110 @@
-# DSA I Lab - Sorting Problem Solutions
+DSA I Laboratory Repository for UIU Students
+About
+This repository is created for students of United International University (UIU) enrolled in the Data Structures and Algorithms (DSA) I Laboratory course. It serves as a centralized resource containing problem sheets, solutions, exam questions, and supplementary materials as provided by the university or outlined in the course syllabus. The problem sheets are solved and organized to help fellow students easily understand and practice DSA concepts.
+📖 Purpose
+The goal is to simplify the learning process for UIU students by providing well-structured solutions to university-provided problem sheets and additional resources. All content aligns with the DSA I Lab syllabus, making it easier to prepare for labs, assignments, and exams.
+📂 Repository Structure
+The repository is organized to reflect the course syllabus, with problem sheets and solutions clearly separated for easy access:
+├── Exam Questions
+│   └── CT-1
+│       └── solutions
+├── Materials
+│   └── Stack and Queue
+├── Problem Sheets with solutions
+│   ├── linked_list_problem_sheet
+│   │   ├── Problem_Sheet.pdf
+│   │   ├── Problem 01
+│   │   ├── Problem 02
+│   │   ├── ...
+│   │   └── Problem 10
+│   ├── searching_problem_sheet
+│   │   ├── Problem_Sheet.pdf
+│   │   ├── Problem 01
+│   │   ├── Problem 02
+│   │   ├── ...
+│   │   └── Problem 10
+│   ├── sorting_problem_sheet
+│   │   ├── bubble_sort
+│   │   │   ├── Problem_Sheet.pdf
+│   │   │   ├── Problem 01
+│   │   │   ├── Problem 02
+│   │   │   ├── ...
+│   │   │   └── Problem 10
+│   │   ├── insertion_sort
+│   │   │   ├── Problem_Sheet.pdf
+│   │   │   ├── Problem 01
+│   │   │   ├── Problem 02
+│   │   │   ├── ...
+│   │   │   └── Problem 10
+│   │   └── selection_sort
+│   │       ├── Problem_Sheet.pdf
+│   │       ├── Problem 01
+│   │       ├── Problem 02
+│   │       ├── ...
+│   │       └── Problem 10
+│   └── stack_queue_problem_sheet
+│       ├── Problem_Sheet.pdf
+└── problems-solutions
+    ├── bubble sort
+    ├── insertion sort
+    └── selection sort
 
-## Overview
+Directory Descriptions
 
-This repository contains problem sheets and solutions for sorting algorithms from the **DSA I Lab** course. The problems are designed for beginners and focus on basic sorting techniques.
+Exam Questions/CT-1: Includes past exam questions and solutions for the CT-1 assessment, as provided by UIU.
+Materials/Stack and Queue: Supplementary course materials covering stacks and queues from the syllabus.
+Problem Sheets with solutions: Contains university-provided problem sheets in PDF format (Problem_Sheet.pdf) and corresponding solutions.
+linked_list_problem_sheet: PDF problem sheet + 10 solved problems on linked lists.
+searching_problem_sheet: PDF problem sheet + 10 solved problems on searching algorithms (e.g., linear and binary search).
+sorting_problem_sheet: PDF problem sheets for each sorting algorithm + 30 solved problems:
+Bubble Sort (10 problems)
+Insertion Sort (10 problems)
+Selection Sort (10 problems)
 
-## Structure
 
-```
-Problem Sheets with solutions/
-│── sorting_problem_sheet.pdf  # Contains all sorting problems
-│
-├── bubble_sort/               # Solutions using Bubble Sort
-│   ├── Problem 01/
-│   │   └── problem01.cpp
-│   ├── Problem 02/
-│   │   └── problem02.cpp
-│   ├── ...
-│   └── Problem 10/
-│       └── problem10.cpp
-│
-├── insertion_sort/            # Solutions using Insertion Sort
-│   ├── Problem 01/
-│   │   └── problem01.cpp
-│   ├── Problem 02/
-│   │   └── problem02.cpp
-│   ├── ...
-│   └── Problem 10/
-│       └── problem10.cpp
-│
-└── selection_sort/            # Solutions using Selection Sort
-    ├── Problem 01/
-    │   └── problem01.cpp
-    ├── Problem 02/
-    │   └── problem02.cpp
-    ├── ...
-    └── Problem 10/
-        └── problem10.cpp
-```
+stack_queue_problem_sheet: PDF problem sheet + problems on stack and queue data structures.
 
-## How to Use
 
-1. **Download or clone the repository:**
-   ```sh
-   git clone https://github.com/rumman999/CSE2216_DSA_lab_UIU.git
-   ```
-2. **Open `sorting_problem_sheet.pdf`** to see the problems.
-3. Navigate to the respective sorting algorithm folder to find solutions.
-4. Each problem folder contains a `.cpp` file with a simple solution for beginners.
+problems-solutions: Additional solutions for sorting algorithms (bubble, insertion, selection sort).
 
-## Requirements
+🚀 How to Use This Repository
 
-- A C++ compiler (e.g., `g++` for Linux/macOS, MinGW for Windows)
-- A code editor (VS Code recommended)
+Clone the Repository:git clone <repository-url>
 
-## Compilation & Execution
 
-To compile and run a solution, navigate to the problem folder and use:
+Navigate to a Topic: Go to the desired folder (e.g., Problem Sheets with solutions/sorting_problem_sheet/bubble_sort).
+Review the Problem Sheet: Open the Problem_Sheet.pdf in each topic folder to view the university-provided problems.
+Practice Problems: Attempt the problems listed in the PDF.
+Check Solutions: Refer to the solutions in each Problem XX folder to verify your work.
+Study Materials: Use the Materials folder for additional resources from the syllabus.
 
-```sh
-g++ problem01.cpp -o problem01
-./problem01
-```
+🎯 Learning Objectives
+This repository helps UIU students:
 
-Replace `problem01.cpp` with the appropriate file name for each problem.
+Practice problems from university-provided problem sheets.
+Understand solutions for linked lists, searching, sorting, stacks, and queues.
+Prepare for lab assignments and exams like CT-1.
+Build a strong foundation in DSA concepts as per the UIU syllabus.
 
-## Contributions
+💡 Tips for Students
 
-Feel free to contribute by improving solutions or adding explanations!
+Start by reviewing the Problem_Sheet.pdf in each folder to understand the problems.
+Attempt solving problems before checking the solutions to improve your skills.
+Use the solutions to learn different approaches and optimize your code.
+Refer to the Materials folder for clarity on topics like stacks and queues.
+Follow the syllabus order to stay on track with the course.
 
+🤝 Contributing
+This repository is specific to UIU's DSA I Lab syllabus, but contributions are welcome! If you have improved solutions, clearer explanations, or additional resources:
+
+Fork the repository.
+Create a new branch (git checkout -b feature/new-content).
+Add your content, ensuring it aligns with the UIU syllabus and includes the relevant problem sheet PDFs.
+Submit a pull request.
+
+Please ensure contributions are relevant to the UIU DSA I Lab course and maintain the beginner-friendly structure.
+📜 License
+This repository is licensed under the MIT License. You are free to use and share the content for educational purposes within the UIU community.
+📬 Contact
+For questions, suggestions, or feedback, please open an issue in the repository or contact me at rumman.rk17@gmail.com.
+Happy coding, UIU students! 🚀
