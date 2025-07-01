@@ -1,4 +1,0 @@
-1a BST insertion search
-1b BST deletion of a node and inorfer travelsal
-2 Is the graph bipartite 
-3 Reverse a string using stack
