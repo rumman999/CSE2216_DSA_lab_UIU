@@ -1,0 +1,33 @@
+#include <iostream>
+#include <stack>
+#include <queue>
+using namespace std;
+
+
+
+void reverseQueue(queue<int> &q){
+    stack<int> st;
+
+    while(!q.empty()){
+        st.push(q.front());
+        q.pop();
+    }
+
+    while(!st.empty()){
+        q.push(st.top());
+        st.pop();
+    }
+}
+
+
+int main(){
+
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+
+    reverseQueue(q);
+
+    return 0;
+}

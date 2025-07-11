@@ -1,12 +1,14 @@
 #include <iostream>
 #include <queue>
+#include <vector>
+#include <algorithm>
+#include <climits>
 using namespace std;
 
 class Graph{
     int V;
     bool directed;
     int adj[100][100];
-    int colored[100];
 
 public:
     Graph(int v, bool dir){
@@ -21,8 +23,6 @@ public:
     }
 
     void addEdge(int u, int v){
-        u--;
-        v--;
         adj[u][v] = 1;
 
         if(!directed) adj[v][u] = 1;
@@ -53,56 +53,57 @@ public:
         }
     }
 
-    void init(){
-        for(int i=0;i<V;i++){
-            colored[i] = -1;
-        }
-    }
 
-    bool Bipartite(int start){
+    vector<int> shortestPath(int start){
+        vector<int> dist(V, INT_MAX);
+
         queue<int> q;
-        start--;
         q.push(start);
-        colored[start] = 0;
+        dist[q.front()] = 0;
 
         while(!q.empty()){
             int u = q.front();
             q.pop();
 
-            for(int v=V-1;v>=0;v--){
+            for(int v=0;v<V;v++){
                 if(adj[u][v]==1){
-                    if(colored[v] == -1){
-                        colored[v] = !colored[u];
+                    if(dist[v]>dist[u]+1){
+                        dist[v]=dist[u]+1;
                         q.push(v);
-                }
-                else if(colored[v] == colored[u]){
-                    return false;
-                }
+                    }
                 }
             }
-        }
-        return true;
-    }
 
+        }
+
+        return dist;
+
+    }
 };
 
 int main(){
 
     Graph g(5,false);
 
-    g.addEdge(1,2);
-    g.addEdge(2,3);
+    g.addEdge(0,1);
+    g.addEdge(0,2);
+    g.addEdge(1,3);
+    g.addEdge(1,4);
+    g.addEdge(2,4);
     g.addEdge(3,4);
-    g.addEdge(4,1);
  
-
-    g.init();
     
-    if(g.Bipartite(1)){
-        cout << "YES" << endl;
-    } else{
-        cout << "NO" << endl;
+    vector<int> distances = g.shortestPath(0);
+
+    for(int i: distances){
+        if(i==INT_MAX){
+            cout << -1 << " ";
+        } else{
+            cout << i << " ";
+        }
     }
+
+    cout << endl;
     
     return 0;
 }
